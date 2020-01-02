@@ -9,7 +9,7 @@ import { calculateResult } from './utils/calculateResult';
 import Question from './components/Question';
 import Result from './components/Result';
 
-const initialValues = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+const initialValues = [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3];
 
 function App() {
   const [slider, setSlider] = useState(3);
@@ -21,6 +21,7 @@ function App() {
   // const [thinking, setThinking] = useState(0);
   // const [judging, setJudging] = useState(0);
   // const [perceiving, setPerceiving] = useState(0);
+  const [currentSlider, setCurrentSlider] = useState(3);
   const [indexes, setIndexes] = useState([0,1,2,3]);
   const [currentQuestions, setCurrentQuestions] = useState(indexes.map( index => {
     return questions[index];
@@ -32,11 +33,13 @@ function App() {
   console.log(values);
   console.log(result);
 
-  const handleChange = (id, value) => {
-    let newValues = [...values];
-    newValues[id] = value;
-    setValues(newValues);
-  };
+
+  // const handleChange = (id, value) => {
+  //   let newValues = [...values];
+  //   newValues[id] = value;
+  //   setValues(newValues);
+  // };
+
   useEffect(()=>{
     setCurrentQuestions(
       indexes.map( index => {
@@ -62,8 +65,12 @@ function App() {
               slider={slider}
               question={quest}
               values={values}
-              handleChange={handleChange}
+              // handleChange={handleChange}
               handleSubmit={handleSubmit}
+              setValues={setValues}
+              currentSlider={currentSlider}
+              setCurrentSlider={setCurrentSlider}
+
             />
 
             {/* button sends user to prev page. Only shows up after first page */}
@@ -80,6 +87,7 @@ function App() {
                 let addArr = indexes.map(index => index+=4);
                 setIndexes(addArr);
                 console.log(addArr);
+                // setCurrentSlider(3);
             }}>Next Page</button>}
           </>
         )
