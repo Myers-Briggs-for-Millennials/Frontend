@@ -50,6 +50,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Characteristiq</h1>
       <Route exact path='/' render={() => (
         <Home/>
       )}/>

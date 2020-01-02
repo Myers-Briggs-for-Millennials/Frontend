@@ -15,8 +15,7 @@ let Btn = styled.button`
 `;
 
 const Home = () => {
-    return (<div>
-        <h1>Characteristiq</h1>
+    return (<div>        
         <Btn><TheLink to="/questions">Go!</TheLink></Btn>
     </div>)
 }
