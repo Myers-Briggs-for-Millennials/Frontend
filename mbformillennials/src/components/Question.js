@@ -1,6 +1,7 @@
 import React from 'react'
 import Form from './Form'
 import styled from 'styled-components'
+import { questions } from './data';
 
 const NumberDiv = styled.div`
     margin: 0 auto;
@@ -19,12 +20,12 @@ const AnswerDiv = styled.div`
 
 
 const Question = (props) => {
-    const {setSlider, slider} = props
+    const {setSlider, slider, question} = props
     return <div>
-        <h2>Rate yourself on a scale from 1 to 5</h2>
+        <h2>Which do you relate to more?</h2>
         <AnswerDiv>
-            <p>Makes Lists</p>
-            <p>Relies on Memory</p>
+            <p>{question.value1}</p>
+            <p>{question.value2}</p>
         </AnswerDiv>
         
         {/* <NumberDiv>
