@@ -8,6 +8,7 @@ import { calculateResult } from './utils/calculateResult';
 
 import Question from './components/Question';
 import Result from './components/Result';
+import Home from './components/Home'
 
 const initialValues = [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3];
 
@@ -49,10 +50,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Myers Briggs For Millenials</h1>
+      <Route exact path='/' render={() => (
+        <Home/>
+      )}/>
+      
+      
+
 
       {/* maps through data set to produce 4 questions based on the state of indexes */}
-      <Route exact path='/' render={() => (
+      <Route exact path='/questions' render={() => (
         <>
             {currentQuestions.map(quest => (
               <Question
