@@ -3,6 +3,6 @@
     "name": "mbformillenials",
     "builds": [{ "src": "mbformillennials/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
     "routes": [
-        { "src": "/(.*)", "dest": "/mbformillenials/$1" }
+        { "src": "/(.*)", "dest": "/mbformillennials/$1" }
     ]
 }
