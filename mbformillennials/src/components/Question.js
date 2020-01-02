@@ -32,11 +32,7 @@ const Question = (props) => {
         </AnswerDiv>
         <NumberDiv>
             <Form setSlider={setSlider} slider={slider} setCurrentSlider={setCurrentSlider}/>
-        </NumberDiv>
-        <button onClick={e => {
-            e.preventDefault();
-            props.handleSubmit(props.values);
-        }}>Get Result</button>
+        </NumberDiv>        
     </div>
 }
 
