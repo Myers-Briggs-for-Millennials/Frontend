@@ -22,19 +22,11 @@ const AnswerDiv = styled.div`
 const Question = (props) => {
     const {setSlider, slider, question} = props
     return <div>
-        <h2>Which do you relate to more?</h2>
+        <h2>Q{question.id}</h2>
         <AnswerDiv>
             <p>{question.value1}</p>
             <p>{question.value2}</p>
         </AnswerDiv>
-        
-        {/* <NumberDiv>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </NumberDiv> */}
         <NumberDiv>
             <Form setSlider={setSlider} slider={slider}/>
         </NumberDiv>

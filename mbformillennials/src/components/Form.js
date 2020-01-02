@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
 
 function ValueLabelComponent(props) {
   const { children, open, value } = props;
-
+    console.log(value);
   return (
     <Tooltip open={open} enterTouchDelay={0} placement="top" title={value}>
       {children}
@@ -82,7 +82,7 @@ const PrettoSlider = withStyles({
 
 
 
-export default function CustomizedSlider() {
+export default function CustomizedSlider(props) {
   const classes = useStyles();
 
   return (
@@ -93,6 +93,7 @@ export default function CustomizedSlider() {
         // getAriaValueText={valuetext}
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
+        onChange={ (e, val) => console.log(val) }
         step={1}
         marks
         min={1}
