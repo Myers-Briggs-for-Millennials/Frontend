@@ -89,7 +89,7 @@ export default function CustomizedSlider(props) {
   return (
     <div className={classes.root}>
 
-      <Typography id="discrete-slider" gutterBottom>Answer</Typography>
+      <Typography id="discrete-slider" gutterBottom></Typography>
       <PrettoSlider defaultValue={3}
         // getAriaValueText={valuetext}
         aria-labelledby="discrete-slider"

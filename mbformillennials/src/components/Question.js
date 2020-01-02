@@ -27,7 +27,7 @@ const Question = (props) => {
         <AnswerDiv>
             <p>{question.value1}</p>
             <p>{question.value2}</p>
-            <p>Current value is {currentSlider}</p>
+            {/* <p>Current value is {currentSlider}</p> */}
         </AnswerDiv>
         <NumberDiv>
             <Form setSlider={setSlider} slider={slider} setCurrentSlider={setCurrentSlider} currentSlider={currentSlider} setValues={setValues} id={question.id} values={values}/>
