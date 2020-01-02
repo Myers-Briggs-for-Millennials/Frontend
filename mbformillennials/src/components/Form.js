@@ -57,7 +57,7 @@ const PrettoSlider = withStyles({
   thumb: {
     height: 24,
     width: 24,
-    backgroundColor: '#fff',
+    backgroundColor: '#6558f5',
     border: '2px solid currentColor',
     marginTop: -8,
     marginLeft: -12,
@@ -83,6 +83,7 @@ const PrettoSlider = withStyles({
 
 
 export default function CustomizedSlider(props) {
+    const {setCurrentSlider} = props;
   const classes = useStyles();
 
   return (
@@ -93,7 +94,7 @@ export default function CustomizedSlider(props) {
         // getAriaValueText={valuetext}
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
-        onChange={ (e, val) => console.log(val) }
+        onChange={ (e, val) => setCurrentSlider(val) }
         step={1}
         marks
         min={1}
