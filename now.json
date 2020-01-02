@@ -1,8 +1,8 @@
 {
     "version": 2,
     "name": "mbformillenials",
-    "builds": [{ "src": "mbformillenials/package.json", "use": "@now/static-build", "config": {"distDir": "mbformillenials/public/build"} }],
+    "builds": [{ "src": "mbformillennials/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
     "routes": [
-        { "src": "/(.*)", "dest": "/mbformillenials/$1" }
+        { "src": "/(.*)", "dest": "/mbformillennials/$1" }
     ]
 }
