@@ -20,11 +20,9 @@ function App() {
   const [currentQuestions, setCurrentQuestions] = useState(indexes.map( index => {
     return questions[index];
   }));
-  console.log(currentQuestions);
 
   const [values, setValues] = useState(initialValues);
   const [result, setResult] = useState('');
-  console.log(result);
 
 
   const handleChange = (id, value) => {
