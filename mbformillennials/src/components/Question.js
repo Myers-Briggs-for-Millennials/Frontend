@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Form from './Form'
 import styled from 'styled-components'
+import { questions } from './data';
 
 const NumberDiv = styled.div`
     margin: 0 auto;
@@ -19,23 +20,18 @@ const AnswerDiv = styled.div`
 
 
 const Question = (props) => {
-    const {setSlider, slider} = props
+    const [currentSlider, setCurrentSlider] = useState(3);
+
+    const {setSlider, slider, question} = props
     return <div>
-        <h2>Rate yourself on a scale from 1 to 5</h2>
+        <h2>Q{question.id}</h2>
         <AnswerDiv>
-            <p>Makes Lists</p>
-            <p>Relies on Memory</p>
+            <p>{question.value1}</p>
+            <p>{question.value2}</p>
+            <p>Current value is {currentSlider}</p>
         </AnswerDiv>
-        
-        {/* <NumberDiv>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </NumberDiv> */}
         <NumberDiv>
-            <Form setSlider={setSlider} slider={slider}/>
+            <Form setSlider={setSlider} slider={slider} setCurrentSlider={setCurrentSlider}/>
         </NumberDiv>
         <button onClick={e => {
             e.preventDefault();
