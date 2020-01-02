@@ -16,7 +16,7 @@ let Btn = styled.button`
 
 const Home = () => {
     return (<div>
-        <h1>Myers Briggs For Millenials</h1>
+        <h1>Characteristiq</h1>
         <Btn><TheLink to="/questions">Go!</TheLink></Btn>
     </div>)
 }
