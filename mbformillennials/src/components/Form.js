@@ -83,7 +83,7 @@ const PrettoSlider = withStyles({
 
 
 export default function CustomizedSlider(props) {
-    const {setCurrentSlider, setValues, id, values} = props;
+    const {setCurrentSlider, currentSlider, setValues, id, values} = props;
   const classes = useStyles();
 
   return (
@@ -100,6 +100,7 @@ export default function CustomizedSlider(props) {
             newValues[id] = val;
             setValues(newValues);
             console.log(newValues);} }
+        value={values[id]}
         step={1}
         marks
         min={1}

@@ -21,6 +21,7 @@ function App() {
   // const [thinking, setThinking] = useState(0);
   // const [judging, setJudging] = useState(0);
   // const [perceiving, setPerceiving] = useState(0);
+  const [currentSlider, setCurrentSlider] = useState(3);
   const [indexes, setIndexes] = useState([0,1,2,3]);
   const [currentQuestions, setCurrentQuestions] = useState(indexes.map( index => {
     return questions[index];
@@ -67,6 +68,8 @@ function App() {
               // handleChange={handleChange}
               handleSubmit={handleSubmit}
               setValues={setValues}
+              currentSlider={currentSlider}
+              setCurrentSlider={setCurrentSlider}
 
             />
 
@@ -84,6 +87,7 @@ function App() {
                 let addArr = indexes.map(index => index+=4);
                 setIndexes(addArr);
                 console.log(addArr);
+                // setCurrentSlider(3);
             }}>Next Page</button>}
           </>
         )
