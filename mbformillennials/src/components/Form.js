@@ -51,7 +51,7 @@ const marks = [
 
 const PrettoSlider = withStyles({
   root: {
-    color: '#52af77',
+    color: '#6558f5',
     height: 8,
   },
   thumb: {
