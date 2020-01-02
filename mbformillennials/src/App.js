@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
+import { Route } from 'react-router-dom';
 import './App.css';
-import Question from './components/Question'
+
+import Question from './components/Question';
+import Result from './components/Result';
 
 
 function App() {
@@ -23,7 +25,8 @@ function App() {
     <div className="App">
       <h1>Myers Briggs For Millenials</h1>
       
-      <Question setSlider={setSlider} slider={slider}/>
+      <Route exact path='/' render={() => <Question setSlider={setSlider} slider={slider}/>} />
+      <Route path='/result' render={() => <Result />} />
     </div>
   );
 }
