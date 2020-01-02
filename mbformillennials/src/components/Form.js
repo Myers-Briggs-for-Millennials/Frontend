@@ -83,7 +83,7 @@ const PrettoSlider = withStyles({
 
 
 export default function CustomizedSlider(props) {
-    const {setCurrentSlider} = props;
+    const {setCurrentSlider, currentSlider, setValues, id, values} = props;
   const classes = useStyles();
 
   return (
@@ -94,7 +94,13 @@ export default function CustomizedSlider(props) {
         // getAriaValueText={valuetext}
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
-        onChange={ (e, val) => setCurrentSlider(val) }
+        onChange={ (e, val) => {
+            setCurrentSlider(val); 
+            let newValues = [...values];
+            newValues[id] = val;
+            setValues(newValues);
+            console.log(newValues);} }
+        value={values[id]}
         step={1}
         marks
         min={1}

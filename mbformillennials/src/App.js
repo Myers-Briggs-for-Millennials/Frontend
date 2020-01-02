@@ -15,6 +15,7 @@ function App() {
   const history = useHistory();
 
   const [slider, setSlider] = useState(3);
+  const [currentSlider, setCurrentSlider] = useState(3);
   const [indexes, setIndexes] = useState([0,1,2,3]);
   const [currentQuestions, setCurrentQuestions] = useState(indexes.map( index => {
     return questions[index];
@@ -25,11 +26,13 @@ function App() {
   const [result, setResult] = useState('');
   console.log(result);
 
+
   const handleChange = (id, value) => {
     let newValues = [...values];
     newValues[id] = value;
     setValues(newValues);
   };
+
   useEffect(()=>{
     setCurrentQuestions(
       indexes.map( index => {
@@ -58,10 +61,13 @@ function App() {
                 key={quest.id}
                 setSlider={setSlider}
                 slider={slider}
+                currentSlider={currentSlider}
+                setCurrentSlider={setCurrentSlider}
                 question={quest}
                 values={values}
+                setValues={setValues}
                 handleChange={handleChange}
-                handleSubmit={handleSubmit}
+                handleSubmit={handleSubmit}                
               />
             ))}
 
@@ -79,6 +85,7 @@ function App() {
                 let addArr = indexes.map(index => index+=4);
                 setIndexes(addArr);
                 console.log(addArr);
+                // setCurrentSlider(3);
             }}>Next Page</button>}
 
             {indexes[3] === questions.length-1 && <button onClick={e => {
