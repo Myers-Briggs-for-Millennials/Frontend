@@ -34,19 +34,31 @@ function App() {
   return (
     <div className="App">
       <h1>Myers Briggs For Millenials</h1>
+
+      {/* maps through data set to produce 4 questions based on the state of indexes */}
       {currentQuestions.map(quest =>{
         return <Question setSlider={setSlider} slider={slider} question={quest}/>
       })}
       
-      <button onClick={e => {
-        e.preventDefault();
-        let newArr = indexes.map(index => index+=4);
-        if (newArr[0] < questions.length){
-          setIndexes(newArr);
-        }
-        
+      {/* button sends user to prev page. Only shows up after first page */}
+      {   indexes[0] > 0 &&   <button onClick={e => {
+         e.preventDefault();
+          let subArr = indexes.map(index => index-=4);
+          setIndexes(subArr);
+      }}>Previous Page</button>}
 
-      }}>Next Page</button>
+
+      {/* button sends user to next page. Disappears on last page */}
+      { indexes[3] < questions.length-1 && <button onClick={e => {
+          e.preventDefault();
+          let addArr = indexes.map(index => index+=4);
+          setIndexes(addArr);
+          console.log(addArr);
+      }}>Next Page</button>}
+
+
+
+
     </div>
   );
 }
