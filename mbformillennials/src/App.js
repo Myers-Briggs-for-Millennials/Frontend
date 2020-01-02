@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Question from './components/Question'
-import questionSet from './components/data'
+import {questions} from './data/questions'
 
 
 function App() {
@@ -16,17 +16,19 @@ function App() {
   const [judging, setJudging] = useState(0);
   const [perceiving, setPerceiving] = useState(0);
   const [indexes, setIndexes] = useState([0,1,2,3]);
-  const [allQuestions, setAllQuestions] = useState(questionSet);
-  const [currentQuestions, setCurrentQuestions] = useState(questionSet);
+  const [currentQuestions, setCurrentQuestions] = useState(indexes.map( index => {
+    return questions[index];
+  }));
 
 
+  useEffect(()=>{
+    setCurrentQuestions(
+      indexes.map( index => {
+        return questions[index];
+      })
 
-  //make copy of array
-  //push new questions
-  //state for array
-
-
-
+    );
+  }, [indexes])
 
 
   return (
@@ -38,9 +40,12 @@ function App() {
       
       <button onClick={e => {
         e.preventDefault();
-        indexes.map(index => {
-          return questionSet[index];
-        })
+        let newArr = indexes.map(index => index+=4);
+        if (newArr[0] < questions.length){
+          setIndexes(newArr);
+        }
+        
+
       }}>Next Page</button>
     </div>
   );
