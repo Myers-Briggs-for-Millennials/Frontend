@@ -9,7 +9,7 @@ import { calculateResult } from './utils/calculateResult';
 import Question from './components/Question';
 import Result from './components/Result';
 
-const initialValues = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+const initialValues = [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3];
 
 function App() {
   const [slider, setSlider] = useState(3);
@@ -32,11 +32,13 @@ function App() {
   console.log(values);
   console.log(result);
 
-  const handleChange = (id, value) => {
-    let newValues = [...values];
-    newValues[id] = value;
-    setValues(newValues);
-  };
+
+  // const handleChange = (id, value) => {
+  //   let newValues = [...values];
+  //   newValues[id] = value;
+  //   setValues(newValues);
+  // };
+
   useEffect(()=>{
     setCurrentQuestions(
       indexes.map( index => {
@@ -62,8 +64,10 @@ function App() {
               slider={slider}
               question={quest}
               values={values}
-              handleChange={handleChange}
+              // handleChange={handleChange}
               handleSubmit={handleSubmit}
+              setValues={setValues}
+
             />
 
             {/* button sends user to prev page. Only shows up after first page */}
