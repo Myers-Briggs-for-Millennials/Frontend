@@ -38,8 +38,6 @@ function App() {
   return (
     <div className="App">
       <h1>Myers Briggs For Millenials</h1>
-
-      <button onClick={() => handleChange(3, 20)}>change value</button>
       
       <Route exact path='/' render={() => (
         <Question
