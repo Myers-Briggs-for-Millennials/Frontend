@@ -46,12 +46,11 @@ const Result = props => {
         <ResultDiv>
             {props.result ? (
                 <div style={{ marginBottom: '30px' }}>
-                    {currentImage ? <Image src={currentImage} alt={currentResult.type} /> : <CircularProgress />}
+                    {currentImage ? <Image src={currentImage} alt={`${currentResult.name} (${currentResult.type})`} /> : <CircularProgress />}
                     <h2>
                         The {currentResult.name}{' '}
                         ({currentResult.type})                
                     </h2>
-                    <p>{currentResult.description}</p>
                 </div>
             ) : <p>Oops! Something went wrong!</p>}            
             <Btn onClick={() => history.push('/')}>Start Over</Btn>
