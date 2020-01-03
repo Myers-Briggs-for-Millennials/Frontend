@@ -41,17 +41,19 @@ const AnswerText = styled.p`
 const Question = (props) => {
 
     const {setSlider, slider, question, setValues, values, currentSlider, setCurrentSlider} = props
-    return <div>
-        <h2>Q{question.id + 1}</h2>
-        <AnswerDiv>
-            <AnswerText style={{textAlign: 'left'}}>{question.value1}</AnswerText>
-            <AnswerText style={{textAlign: 'right'}}>{question.value2}</AnswerText>
-            {/* <p>Current value is {currentSlider}</p> */}
-        </AnswerDiv>
-        <NumberDiv>
-            <Form setSlider={setSlider} slider={slider} setCurrentSlider={setCurrentSlider} currentSlider={currentSlider} setValues={setValues} id={question.id} values={values}/>
-        </NumberDiv>
-    </div>
+    return (
+        <div style={{ marginTop: '30px' }}>
+            <h2>Q{question.id + 1}</h2>
+            <AnswerDiv>
+                <AnswerText style={{textAlign: 'left'}}>{question.value1}</AnswerText>
+                <AnswerText style={{textAlign: 'right'}}>{question.value2}</AnswerText>
+                {/* <p>Current value is {currentSlider}</p> */}
+            </AnswerDiv>
+            <NumberDiv>
+                <Form setSlider={setSlider} slider={slider} setCurrentSlider={setCurrentSlider} currentSlider={currentSlider} setValues={setValues} id={question.id} values={values}/>
+            </NumberDiv>
+        </div>
+    );
 }
 
 export default Question
