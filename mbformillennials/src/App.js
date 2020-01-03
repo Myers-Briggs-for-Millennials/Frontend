@@ -32,7 +32,7 @@ function App() {
   }));
 
   const [values, setValues] = useState(initialValues);
-  const [result, setResult] = useState('ISFJ');
+  const [result, setResult] = useState('');
 
 
   const handleChange = (id, value) => {
