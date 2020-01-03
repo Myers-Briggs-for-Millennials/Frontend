@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <div>
             <p>You were born with an original Characteristiq, so don't live life a copy.</p>        
-            <Btn onClick={() => history.push('/questions')}>Go!</Btn>
+            <Btn onClick={() => history.push('/questions')}>Find Your Characteristiq!</Btn>
         </div>
     );
 }
