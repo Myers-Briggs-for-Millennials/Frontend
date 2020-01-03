@@ -87,6 +87,7 @@ function App() {
                 e.preventDefault();
                 let subArr = indexes.map(index => index-=4);
                 setIndexes(subArr);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }}>Previous Page</Btn>} {' '}
 
             {/* button sends user to next page. Disappears on last page */}
@@ -95,12 +96,14 @@ function App() {
                 let addArr = indexes.map(index => index+=4);
                 setIndexes(addArr);
                 console.log(addArr);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
                 // setCurrentSlider(3);
             }}>Next Page</Btn>}
 
             {indexes[3] === questions.length-1 && <Btn onClick={e => {
                 e.preventDefault();
                 handleSubmit(values);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }}>Get Result</Btn>}
           </div>
         </>
