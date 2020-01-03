@@ -11,7 +11,9 @@ import { Btn } from './components/styled-components';
 
 import Question from './components/Question';
 import Result from './components/Result';
-import Home from './components/Home'
+import Home from './components/Home';
+import Register from './components/Register';
+import ThemeToggle from './components/ThemeToggle';
 
 const initialValues = [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3];
 
@@ -73,26 +75,29 @@ function App() {
       {/* maps through data set to produce 4 questions based on the state of indexes */}
       <Route exact path='/questions' render={() => (
         <>
-            {currentQuestions.map(quest => (
-              <Question
-                key={quest.id}
-                setSlider={setSlider}
-                slider={slider}
-                currentSlider={currentSlider}
-                setCurrentSlider={setCurrentSlider}
-                question={quest}
-                values={values}
-                setValues={setValues}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}                
-              />
-            ))}
+          <p>Rate yourself from 1-5.</p>
+          {currentQuestions.map(quest => (
+            <Question
+              key={quest.id}
+              setSlider={setSlider}
+              slider={slider}
+              currentSlider={currentSlider}
+              setCurrentSlider={setCurrentSlider}
+              question={quest}
+              values={values}
+              setValues={setValues}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}                
+            />
+          ))}
 
+          <div style={{ marginTop: '50px' }}>
             {/* button sends user to prev page. Only shows up after first page */}
             {indexes[0] > 0 && <Btn onClick={e => {
                 e.preventDefault();
                 let subArr = indexes.map(index => index-=4);
                 setIndexes(subArr);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }}>Previous Page</Btn>} {' '}
 
             {/* button sends user to next page. Disappears on last page */}
@@ -101,17 +106,23 @@ function App() {
                 let addArr = indexes.map(index => index+=4);
                 setIndexes(addArr);
                 console.log(addArr);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
                 // setCurrentSlider(3);
             }}>Next Page</Btn>}
 
             {indexes[3] === questions.length-1 && <Btn onClick={e => {
                 e.preventDefault();
                 handleSubmit(values);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }}>Get Result</Btn>}
-          </>
-        )} />
+          </div>
+        </>
+      )} />
 
       <Route path='/result' render={() => <Result result={result} />} />
+      <Route path='/register' render={() => <Register result={result} />} />
+
+      <ThemeToggle />
     </div>
   );
 }
