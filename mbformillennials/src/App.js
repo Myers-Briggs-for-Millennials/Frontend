@@ -7,7 +7,7 @@ import {questions} from './data/questions'
 
 import { calculateResult } from './utils/calculateResult';
 
-import { Btn } from './components/styled-components';
+import { Btn as Button } from './components/styled-components';
 
 import Question from './components/Question';
 import Result from './components/Result';
@@ -19,12 +19,7 @@ const initialValues = [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
 
 function App() {
 
-  let Btn = styled.button`
-    background-color: #6558f5
-    border: none;
-    padding: 1%;
-    border-radius: 5px;
-    color: white;
+  let Btn = styled(Button)`
     margin: 1%;
 `;
   const history = useHistory();
@@ -37,7 +32,7 @@ function App() {
   }));
 
   const [values, setValues] = useState(initialValues);
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState('ISFJ');
 
 
   const handleChange = (id, value) => {
