@@ -1,22 +1,13 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
 
-let TheLink = styled(Link)`
-    text-decoration: none;
-    color: white;
-`;
-
-let Btn = styled.button`
-    background-color: #6558f5
-    border: none;
-    padding: 1%;
-    border-radius: 5px;
-`;
+import { Btn } from './styled-components';
 
 const Home = () => {
+    const history = useHistory();
+
     return (<div>        
-        <Btn><TheLink to="/questions">Go!</TheLink></Btn>
+        <Btn onClick={() => history.push('/questions')}>Go!</Btn>
     </div>)
 }
 
