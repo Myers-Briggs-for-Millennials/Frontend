@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import { CircularProgress } from '@material-ui/core';
 
 import { Btn } from './styled-components';
 
@@ -45,9 +46,7 @@ const Result = props => {
         <ResultDiv>
             {props.result ? (
                 <div style={{ marginBottom: '30px' }}>
-                    <Image
-                        src={currentImage && currentImage}
-                        alt={currentResult.type} />
+                    {currentImage ? <Image src={currentImage} alt={currentResult.type} /> : <CircularProgress />}
                     <h2>
                         The {currentResult.name}{' '}
                         ({currentResult.type})                
