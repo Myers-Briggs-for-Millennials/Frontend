@@ -89,20 +89,11 @@ function App() {
             ))}
 
             {/* button sends user to prev page. Only shows up after first page */}
-<<<<<<< HEAD
-            {indexes[0] > 0 &&   <Btn onClick={e => {
-                e.preventDefault();
-                let subArr = indexes.map(index => index-=4);
-                setIndexes(subArr);
-            }}>Previous Page</Btn>}
-
-=======
             {indexes[0] > 0 && <Btn onClick={e => {
                 e.preventDefault();
                 let subArr = indexes.map(index => index-=4);
                 setIndexes(subArr);
             }}>Previous Page</Btn>} {' '}
->>>>>>> 652a97b681eff5768b43fcdef12ffccc48f34b71
 
             {/* button sends user to next page. Disappears on last page */}
             {indexes[3] < questions.length-1 && <Btn onClick={e => {
