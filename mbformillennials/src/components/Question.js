@@ -44,8 +44,8 @@ const Question = (props) => {
     return <div>
         <h2>Q{question.id + 1}</h2>
         <AnswerDiv>
-            <AnswerText>{question.value1}</AnswerText>
-            <AnswerText>{question.value2}</AnswerText>
+            <AnswerText style={{textAlign: 'left'}}>{question.value1}</AnswerText>
+            <AnswerText style={{textAlign: 'right'}}>{question.value2}</AnswerText>
             {/* <p>Current value is {currentSlider}</p> */}
         </AnswerDiv>
         <NumberDiv>
