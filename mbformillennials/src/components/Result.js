@@ -9,10 +9,17 @@ import { types } from '../data/types';
 const ResultDiv = styled.div`
     margin: 0 auto;
     display: flex;
-    width: 47%;
+    width: 50%;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    
+    @media (max-width: 1000px) {
+        width: 60%;
+    };
+
+    @media (max-width: 800px) {
+        width: 80%;
+    }
 `;
 
 const Result = props => {

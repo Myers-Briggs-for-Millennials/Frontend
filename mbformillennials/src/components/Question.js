@@ -1,13 +1,20 @@
-import React, {useState} from 'react'
-import Form from './Form'
-import styled from 'styled-components'
-import { questions } from './data';
+import React from 'react';
+import Form from './Form';
+import styled from 'styled-components';
 
 const NumberDiv = styled.div`
     margin: 0 auto;
     display: flex;
     width: 47%;
     justify-content: space-around;
+
+    @media (max-width: 1000px) {
+        width: 57%;
+    }
+
+    @media (max-width: 800px) {
+        width: 77%;
+    }
 `;
 
 const AnswerDiv = styled.div`
@@ -15,6 +22,14 @@ const AnswerDiv = styled.div`
     display: flex;
     width: 42%;
     justify-content: space-between;
+
+    @media (max-width: 1000px) {
+        width: 52%;
+    }
+
+    @media (max-width: 800px) {
+        width: 72%;
+    }
 `;
 
 
