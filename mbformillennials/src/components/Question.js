@@ -32,6 +32,10 @@ const AnswerDiv = styled.div`
     }
 `;
 
+const AnswerText = styled.p`
+    max-width: 45%;
+`;
+
 
 
 const Question = (props) => {
@@ -40,8 +44,8 @@ const Question = (props) => {
     return <div>
         <h2>Q{question.id + 1}</h2>
         <AnswerDiv>
-            <p>{question.value1}</p>
-            <p>{question.value2}</p>
+            <AnswerText>{question.value1}</AnswerText>
+            <AnswerText>{question.value2}</AnswerText>
             {/* <p>Current value is {currentSlider}</p> */}
         </AnswerDiv>
         <NumberDiv>
