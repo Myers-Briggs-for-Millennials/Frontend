@@ -7,7 +7,7 @@ import { Btn } from './styled-components';
 import { types } from '../data/types';
 
 const ResultDiv = styled.div`
-    margin: 0 auto;
+    margin: 30px auto 0;
     display: flex;
     width: 50%;
     flex-direction: column;
@@ -31,14 +31,14 @@ const Result = props => {
     return (
         <ResultDiv>
             {props.result ? (
-                <>
+                <div style={{ marginBottom: '30px' }}>
                     <img src='https://picsum.photos/500/300' alt='result' />
                     <h2>
                         The {currentResult.name}{' '}
                         ({currentResult.type})                
                     </h2>
                     <p>{currentResult.description}</p>
-                </>
+                </div>
             ) : <p>Oops! Something went wrong!</p>}            
             <Btn onClick={() => history.push('/')}>Start Over</Btn>
         </ResultDiv>

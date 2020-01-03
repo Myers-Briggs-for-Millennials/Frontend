@@ -10,7 +10,8 @@ import { Btn } from './components/styled-components';
 
 import Question from './components/Question';
 import Result from './components/Result';
-import Home from './components/Home'
+import Home from './components/Home';
+import ThemeToggle from './components/ThemeToggle';
 
 const initialValues = [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3];
 
@@ -78,30 +79,34 @@ function App() {
               />
             ))}
 
-            {/* button sends user to prev page. Only shows up after first page */}
-            {indexes[0] > 0 && <Btn onClick={e => {
-                e.preventDefault();
-                let subArr = indexes.map(index => index-=4);
-                setIndexes(subArr);
-            }}>Previous Page</Btn>} {' '}
-
-            {/* button sends user to next page. Disappears on last page */}
-            {indexes[3] < questions.length-1 && <Btn onClick={e => {
-                e.preventDefault();
-                let addArr = indexes.map(index => index+=4);
-                setIndexes(addArr);
-                console.log(addArr);
-                // setCurrentSlider(3);
-            }}>Next Page</Btn>}
-
-            {indexes[3] === questions.length-1 && <Btn onClick={e => {
-                e.preventDefault();
-                handleSubmit(values);
-            }}>Get Result</Btn>}
+            <div style={{ marginTop: '50px' }}>
+              {/* button sends user to prev page. Only shows up after first page */}
+              {indexes[0] > 0 && <Btn onClick={e => {
+                  e.preventDefault();
+                  let subArr = indexes.map(index => index-=4);
+                  setIndexes(subArr);
+              }}>Previous Page</Btn>} {' '}
+  
+              {/* button sends user to next page. Disappears on last page */}
+              {indexes[3] < questions.length-1 && <Btn onClick={e => {
+                  e.preventDefault();
+                  let addArr = indexes.map(index => index+=4);
+                  setIndexes(addArr);
+                  console.log(addArr);
+                  // setCurrentSlider(3);
+              }}>Next Page</Btn>}
+  
+              {indexes[3] === questions.length-1 && <Btn onClick={e => {
+                  e.preventDefault();
+                  handleSubmit(values);
+              }}>Get Result</Btn>}
+            </div>
           </>
         )} />
 
       <Route path='/result' render={() => <Result result={result} />} />
+
+      <ThemeToggle />
     </div>
   );
 }
