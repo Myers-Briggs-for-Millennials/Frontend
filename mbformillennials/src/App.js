@@ -10,7 +10,8 @@ import { Btn } from './components/styled-components';
 
 import Question from './components/Question';
 import Result from './components/Result';
-import Home from './components/Home'
+import Home from './components/Home';
+import ThemeToggle from './components/ThemeToggle';
 
 const initialValues = [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3];
 
@@ -104,6 +105,8 @@ function App() {
         )} />
 
       <Route path='/result' render={() => <Result result={result} />} />
+
+      <ThemeToggle />
     </div>
   );
 }
