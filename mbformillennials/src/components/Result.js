@@ -29,15 +29,17 @@ const Image = styled.img`
 const Result = props => {
     const history = useHistory();
 
-    const [currentImage, setCurrentImage] = useState(null);
-
-    useEffect(() => {
-        const randomImage = currentResult.images[Math.floor(Math.random()*(currentResult.images.length - 1))];
-        setCurrentImage(randomImage);
-    }, []);
+    const [currentImage, setCurrentImage] = useState(null);    
 
     const currentResult = types.find(item => item.type === props.result);
     console.log(currentResult)
+
+    useEffect(() => {
+        if (currentResult) {
+            const randomImage = currentResult.images[Math.floor(Math.random()*(currentResult.images.length - 1))];
+            setCurrentImage(randomImage);
+        };
+    }, [currentResult]);
 
     return (
         <ResultDiv>
