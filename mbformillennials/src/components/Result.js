@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -22,8 +22,19 @@ const ResultDiv = styled.div`
     }
 `;
 
+const Image = styled.img`
+    max-width: 600px;
+`;
+
 const Result = props => {
     const history = useHistory();
+
+    const [currentImage, setCurrentImage] = useState(null);
+
+    useEffect(() => {
+        const randomImage = currentResult.images[Math.floor(Math.random()*(currentResult.images.length - 1))];
+        setCurrentImage(randomImage);
+    }, []);
 
     const currentResult = types.find(item => item.type === props.result);
     console.log(currentResult)
@@ -32,7 +43,9 @@ const Result = props => {
         <ResultDiv>
             {props.result ? (
                 <div style={{ marginBottom: '30px' }}>
-                    <img src='https://picsum.photos/500/300' alt='result' />
+                    <Image
+                        src={currentImage && currentImage}
+                        alt={currentResult.type} />
                     <h2>
                         The {currentResult.name}{' '}
                         ({currentResult.type})                
