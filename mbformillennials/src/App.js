@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Route, useHistory } from 'react-router-dom';
 import './App.css';
+import styled from 'styled-components'
 
 import {questions} from './data/questions'
 
@@ -17,6 +18,15 @@ import ThemeToggle from './components/ThemeToggle';
 const initialValues = [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3];
 
 function App() {
+
+  let Btn = styled.button`
+    background-color: #6558f5
+    border: none;
+    padding: 1%;
+    border-radius: 5px;
+    color: white;
+    margin: 1%;
+`;
   const history = useHistory();
 
   const [slider, setSlider] = useState(3);
