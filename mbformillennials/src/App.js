@@ -6,6 +6,8 @@ import {questions} from './data/questions'
 
 import { calculateResult } from './utils/calculateResult';
 
+import { Btn } from './components/styled-components';
+
 import Question from './components/Question';
 import Result from './components/Result';
 import Home from './components/Home'
@@ -77,26 +79,25 @@ function App() {
             ))}
 
             {/* button sends user to prev page. Only shows up after first page */}
-            {indexes[0] > 0 &&   <button onClick={e => {
+            {indexes[0] > 0 && <Btn onClick={e => {
                 e.preventDefault();
                 let subArr = indexes.map(index => index-=4);
                 setIndexes(subArr);
-            }}>Previous Page</button>}
-
+            }}>Previous Page</Btn>} {' '}
 
             {/* button sends user to next page. Disappears on last page */}
-            {indexes[3] < questions.length-1 && <button onClick={e => {
+            {indexes[3] < questions.length-1 && <Btn onClick={e => {
                 e.preventDefault();
                 let addArr = indexes.map(index => index+=4);
                 setIndexes(addArr);
                 console.log(addArr);
                 // setCurrentSlider(3);
-            }}>Next Page</button>}
+            }}>Next Page</Btn>}
 
-            {indexes[3] === questions.length-1 && <button onClick={e => {
+            {indexes[3] === questions.length-1 && <Btn onClick={e => {
                 e.preventDefault();
                 handleSubmit(values);
-            }}>Get Result</button>}
+            }}>Get Result</Btn>}
           </>
         )} />
 
