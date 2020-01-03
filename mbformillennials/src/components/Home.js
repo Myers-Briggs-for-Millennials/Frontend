@@ -8,10 +8,12 @@ const Home = () => {
 
     return (
         <div>
-            <p>Get your MBTI profile... meme-ifed.</p>        
+            {/* <p>Get your MBTI profile... meme-ifed.</p>         */}
+            <p style={{fontSize: "3rem"}}>Unlock your meme mistique</p>        
             <Btn onClick={() => history.push('/questions')}>Go!</Btn>
         </div>
     );
 }
 
 export default Home
+
