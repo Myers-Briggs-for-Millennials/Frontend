@@ -6,9 +6,12 @@ import { Btn } from './styled-components';
 const Home = () => {
     const history = useHistory();
 
-    return (<div>        
-        <Btn onClick={() => history.push('/questions')}>Go!</Btn>
-    </div>)
+    return (
+        <div>
+            <p>Get your MBTI profile... meme-ifed.</p>        
+            <Btn onClick={() => history.push('/questions')}>Go!</Btn>
+        </div>
+    );
 }
 
 export default Home
